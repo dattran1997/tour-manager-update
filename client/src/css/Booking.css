@@ -1,0 +1,45 @@
+.booking{
+    background-image: url(../images/booking.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-top: 150px;
+    height: 100vh;
+}
+
+.booking .card-container{
+    background-color: #f2f2f2;
+}
+
+.booking .booking-title{
+    color: #ecdede;
+}
+.booking-title{
+    margin-bottom: 38px;
+}
+
+.booking .card-body .col-left input{
+    margin-bottom: 23px;
+}
+
+.booking .card-body .col-right input{
+    margin-bottom: 10px;
+}
+
+.booking .card-body  .book-button{
+    
+}
+.block{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+.block h6{
+    float: left;
+}
+.block DatePicker{
+    float: left;
+}
+.lead{
+    display: block;
+}

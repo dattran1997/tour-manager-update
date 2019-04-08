@@ -1,0 +1,230 @@
+.masthead{
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/slide2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 15% 0px;
+    height: 100vh;
+}
+
+
+.body-about{
+    padding: 82px 0px;
+}
+
+.body-about .body-about-info i{
+    font-size: 75px;
+}
+
+.body-about .body-about-info h3{
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.body-about h2{
+    color: #222222;
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 63px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+}
+
+.body-about .body-about-info p{
+    color: #555555;
+    margin-top: 25px;
+    line-height: 26px;
+    padding: 0 5px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.Body-Video{
+    padding: 82px 0px;
+}
+
+.Body-Video h2{
+    color: #222222;
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 30px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.Body-Video span{
+    font-family: 'Playfair Display';
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 30px;
+    display: block;
+    line-height: 26px;
+    color: #555555;
+}
+
+.Body-Video p{
+    font-family: 'Open Sans';
+    font-size: 15px;
+    line-height: 26px;
+    color: #555555;
+}
+
+.Body-Video a{
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+    background: #e8aa33;
+    color: #ffffff;
+    border-color: #e8aa33;
+    font-family: "Open Sans";
+    border-radius: 3px;
+    padding: 15px 35px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 1.42857143;
+    text-align: center;
+}
+
+
+/*****************
+Body-NEWTOUR
+*******************/
+.Body-NewTour{
+    overflow: hidden;
+    padding: 83px;
+}
+.Body-NameTour{
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+}
+.Body-NameTour-In{
+	position: relative;
+	text-align: center;
+	width: 200px;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+.Body-NameTour-In::before{
+	position: absolute;
+	content: "";
+	top: 10px;
+	left: -110px;
+	width: 100px;
+	height: 1px;
+	background-color: black;
+}
+.Body-NameTour-In::after{
+	position: absolute;
+	content: "";
+	top: 10px;
+	left: 210px;
+	width: 250px;
+	height: 1px;
+	background-color: black;
+}
+.Body-NewTour-In{
+	list-style-type: none;
+	width: 1200px;
+	/*height: 150vh;*/
+	/*max-height: 800px;*/
+	padding: 0;
+	/*background-color: black;*/
+}
+.Body-NewTour-In-Item{
+	float: left;
+	text-align: center;
+	margin: 20px;
+	width: 339px;
+	height: 360px;
+	overflow: hidden;
+	transition: all 200ms ease;
+	position: relative;
+}
+.Body-NewTour-In-Item-Booking{
+	position: absolute;
+	top: -50%;
+	width: 100%;
+	height: 50%;
+	display: flex;
+	align-items: center !important;
+	background-color: rgba(0, 0, 0, .7);
+	transition: all 200ms ease;
+}
+.Body-NewTour-In-Item-Booking-In{
+	margin: auto;
+	width: 200px;
+	height: 50px;
+	display: flex;
+	align-items: center !important;
+	border-radius: 5px;
+	border: 1px solid #f4b843;
+	transition: all 200ms ease;
+}
+.Body-NewTour-In-Item-Booking-In a{
+	text-decoration: none;
+	color: #f4b843;
+	width: 100%;
+	padding: 15px;
+	text-align: center;
+	transition: all 200ms ease;
+}
+.Body-NewTour-In-Item-Booking-In:hover{
+	background-color: #f4b843;
+	transition: all 200ms ease;
+}
+.Body-NewTour-In-Item-Booking-In:hover a{
+	color: white;	
+	transition: all 200ms ease;
+}
+.Body-NewTour-In-Item:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0, .3);
+	transition: all 200ms ease;
+}
+.Body-NewTour-In-Item:hover .Body-NewTour-In-Item-Booking{
+	top: 0;
+	transition: all 200ms ease;
+}
+.Body-NewTour-In-Item img{
+    width: 100%;
+    height: 180px;
+}
+.Body-NewTour-In-Item h3{
+	font-family: 'Open Sans';
+	font-weight: 700;
+	font-size: 24px;
+	margin-top: 10px;
+	text-align: center;
+}
+.rating{
+	list-style-type: none;
+	margin: auto;
+	padding: 0;
+	display:inline-block;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #333;
+}
+.rating-Item{
+	float: left;
+	font-size: 13px;
+}
+.gold{
+	color: #f4b843;
+}
+.white{
+	color: #888;
+}
+.Body-NewTour ul li p{
+	color: #000;
+	margin-top: 10px;
+	line-height: 26px;
+	padding: 0 5px;
+	font-size: 15px;
+	text-align: center
+}
