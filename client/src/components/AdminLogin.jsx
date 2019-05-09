@@ -45,6 +45,7 @@ export default class AdminLogin extends Component {
                 }else{
                     window.localStorage.setItem('userId', result.userId);
                     window.localStorage.setItem('username', result.username);
+                    window.localStorage.setItem('role', result.role);
                     this.setState({
                         authUser: {
                             userId: result.userId,
@@ -53,7 +54,7 @@ export default class AdminLogin extends Component {
                     });
                     console.log(result);
                     window.alert('login successful');
-                    window.location.href = `/admin-manager/${result.userId}`;
+                    window.location.href = `/admin-manager`;
                 }
             }catch(error){
                 console.log(error.message);
@@ -66,11 +67,11 @@ export default class AdminLogin extends Component {
 
   render() {
     return (
-        <div class="Body-admin">
+        <div className="Body-admin">
             <img src={AdminBackground}/>
-            <div class="Body-In">
+            <div className="Body-In">
                 <h1>Admin ? </h1>
-                <form class="Body-In-Form" onSubmit={this.loginSubmit}>
+                <form className="Body-In-Form" onSubmit={this.loginSubmit}>
                     <input type="text" name="" placeholder="username" onChange={(e) => this.loginInfoChange({username: e.target.value})}/>
                     <input type="password" name="" placeholder="password" onChange={(e) => this.loginInfoChange({password: e.target.value})}/>
                     <button type='submit' >LOGIN</button>

@@ -7,6 +7,12 @@ import Booking from './components/Booking';
 import Info from './components/Info';
 import AdminLogin from './components/AdminLogin';
 import AdminManager from './components/AdminManager';
+import AdminUpdate from './components/AdminUpdate';
+import TourUpdate from './components/TourUpdate';
+import AddTourGuide from './components/AddTourGuide';
+import JobDetail from './components/JobDetail';
+import WorkDetail from './components/WorkDetail';
+import CheckTour from './components/CheckTour';
 
 class App extends Component {
   render() {
@@ -21,8 +27,8 @@ class App extends Component {
             return <Page />
           }} />
           
-          <Route path="/booking" render={(props) =>{
-            return <Booking />
+          <Route path="/booking/:id" render={({match}) =>{
+            return <Booking id={match.params.id} />
           }} />
 
           <Route path="/info" render={(props) =>{
@@ -33,8 +39,32 @@ class App extends Component {
             return <AdminLogin />
           }} />
 
-          <Route path="/admin-manager/:id" render={({match}) =>{
-            return <AdminManager id={match.params.id}/>
+          <Route path="/admin-manager" render={(props) =>{
+            return <AdminManager />
+          }} />
+
+          <Route path="/admin-update/:id" render={({match}) =>{
+            return <AdminUpdate id={match.params.id}/>
+          }} />
+
+          <Route path="/tour-update/:id" render={({match}) =>{
+            return <TourUpdate id={match.params.id}/>
+          }} />
+
+          <Route path="/add-tour-guide/:id" render={({match}) =>{
+            return <AddTourGuide id={match.params.id}/>
+          }} />
+
+          <Route path="/job-detail/:id" render={({match}) =>{
+            return <JobDetail id={match.params.id}/>
+          }} />
+
+          <Route path="/work-detail/:id" render={({match}) =>{
+            return <WorkDetail id={match.params.id}/>
+          }} />
+
+          <Route path="/checkTour/:id" render={({match}) =>{
+            return <CheckTour id={match.params.id}/>
           }} />
           
         </div>

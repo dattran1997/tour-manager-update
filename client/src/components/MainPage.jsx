@@ -4,7 +4,32 @@ import Slide from '../images/slide.jpg';
 import Pic1 from '../images/slide1.jpg';
 import NavBar from './NavBar';
 
+
 export default class MainPage extends Component {
+  state ={
+    tourList:[],
+  }
+
+  componentDidMount(){
+    this.getAllTour();
+  }
+  
+  getAllTour = async () => {
+    const result = await fetch(`http://localhost:9999/api/tour`,{
+      method:'GET',
+    }).then((res)=> res.json());
+    if(!result.success){
+      window.alert(result.message);
+    }else{
+      this.setState({
+        tourList: result.allTour,
+      });
+      console.log(this.state.tourList);
+    }
+  
+  }
+
+
   render() {
     return (
       <section className='body'>
@@ -52,127 +77,29 @@ export default class MainPage extends Component {
         <section className='Body-NewTour'>
           <div className='container'>
             <h2 className='text-left mb-5'>NEW TOUR</h2>
-            <div className='row'>
-              <li class="Body-NewTour-In-Item">
-                <div className="Body-NewTour-In-Item-Booking">
-                  <div className="Body-NewTour-In-Item-Booking-In">
-                    <a href="">
-                      BOOK NOW
-                    </a>
+            <div className='row tour-row'>
+              {this.state.tourList.map((tour) =>
+                <li className="Body-NewTour-In-Item" key={tour._id}>
+                  <div className="Body-NewTour-In-Item-Booking">
+                    <div className="Body-NewTour-In-Item-Booking-In">
+                      <a href={"/booking/" + tour._id}>
+                        BOOK NOW
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <img src={Pic1} />
-                <h3>TORONTO</h3>
-                <ul className="rating">
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star white"></span></li>
-                </ul>
-                <p>Duration: 2 Hours<br/>
-                  Opening: 8Am - 10Am</p>
-              </li>
-              <li className="Body-NewTour-In-Item">
-                <div className="Body-NewTour-In-Item-Booking">
-                  <div className="Body-NewTour-In-Item-Booking-In">
-                    <a href="">
-                      BOOK NOW
-                    </a>
-                  </div>
-                </div>
-                <img src={Pic1} />
-                <h3>TORONTO</h3>
-                <ul className="rating">
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star white"></span></li>
-                </ul>
-                <p>Duration: 2 Hours<br/>
-                  Opening: 8Am - 10Am</p>
-              </li>
-              <li className="Body-NewTour-In-Item">
-                <div className="Body-NewTour-In-Item-Booking">
-                  <div className="Body-NewTour-In-Item-Booking-In">
-                    <a href="">
-                      BOOK NOW
-                    </a>
-                  </div>
-                </div>
-                <img src={Pic1} />
-                <h3>TORONTO</h3>
-                <ul className="rating">
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star white"></span></li>
-                </ul>
-                <p>Duration: 2 Hours<br/>
-                  Opening: 8Am - 10Am</p>
-              </li>
-              <li className="Body-NewTour-In-Item">
-                <div className="Body-NewTour-In-Item-Booking">
-                  <div className="Body-NewTour-In-Item-Booking-In">
-                    <a href="">
-                      BOOK NOW
-                    </a>
-                  </div>
-                </div>
-                <img src={Pic1} />
-                <h3>TORONTO</h3>
-                <ul className="rating">
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star white"></span></li>
-                </ul>
-                <p>Duration: 2 Hours<br/>
-                  Opening: 8Am - 10Am</p>
-              </li>
-              <li className="Body-NewTour-In-Item">
-                <div className="Body-NewTour-In-Item-Booking">
-                  <div className="Body-NewTour-In-Item-Booking-In">
-                    <a href="">
-                      BOOK NOW
-                    </a>
-                  </div>
-                </div>
-                <img src={Pic1} />
-                <h3>TORONTO</h3>
-                <ul className="rating">
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star white"></span></li>
-                </ul>
-                <p>Duration: 2 Hours<br/>
-                  Opening: 8Am - 10Am</p>
-              </li>
-              <li className="Body-NewTour-In-Item">
-                <div className="Body-NewTour-In-Item-Booking">
-                  <div className="Body-NewTour-In-Item-Booking-In">
-                    <a href="">
-                      BOOK NOW
-                    </a>
-                  </div>
-                </div>
-                <img src={Pic1} />
-                <h3>TORONTO</h3>
-                <ul className="rating">
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star gold"></span></li>
-                  <li className="rating-Item"><span className="fa fa-star white"></span></li>
-                </ul>
-                <p>Duration: 2 Hours<br/>
-                  Opening: 8Am - 10Am</p>
-              </li>
+                  <img src={Pic1} />
+                  <h3>{tour.title}</h3>
+                  <ul className="rating">
+                    <li className="rating-Item"><span className="fa fa-star gold"></span></li>
+                    <li className="rating-Item"><span className="fa fa-star gold"></span></li>
+                    <li className="rating-Item"><span className="fa fa-star gold"></span></li>
+                    <li className="rating-Item"><span className="fa fa-star gold"></span></li>
+                    <li className="rating-Item"><span className="fa fa-star white"></span></li>
+                  </ul>
+                  <p>Duration: {tour.duration} Day(s)</p>
+                </li>
+              )}
+              
             </div>
           </div>
         </section>

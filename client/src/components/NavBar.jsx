@@ -4,8 +4,8 @@ import '../css/NavBar.css';
 export default class NavBar extends Component {
   render() {
     return (
-        <div class="Header">
-            <nav class="navbar navbar-expand-lg fixed-top text-white" style={{backgroundColor:'rgba(0, 0, 0, .3)'}}>
+        <div className="Header">
+            <nav className="navbar navbar-expand-lg fixed-top text-white" style={{backgroundColor:'rgba(0, 0, 0, .3)'}}>
                 <div className='container'>
                     <a className='navbar-brand'>Brand</a>
                     <ul className='navbar-nav ml-auto'>

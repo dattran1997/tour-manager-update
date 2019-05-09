@@ -1,0 +1,205 @@
+.adminmanage-bound{
+    width: 100vw;
+    height: 100vh;
+}
+.adminmanage-in{
+    width: 1200px;
+    margin: auto;
+}
+.option{
+    float: left;
+    width: 250px;
+    height: 100vh;
+}
+.managing-area{
+    float: left;
+    width: 950px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+}
+.add-admin-form{
+    width: 100%;
+    height: 100px;
+    display: flex;
+	align-items: center !important;
+    border-bottom: 3px solid black; 
+}
+.add-admin-bound{
+    width: 100%;
+    overflow: hidden;
+}
+.add-admin-bound input{
+    margin: 0 5px;
+}
+.add-admin-bound button{
+    border: none;
+    width: 100px;
+    height: 25px;
+    margin: 2px;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid white;
+    transition: all 300ms ease;
+}
+.add-admin-bound:hover{
+    background: rgba(0, 0, 0, 0);
+    transition: all 300ms ease;
+}
+.adminmanage-in ul{
+    height: 100vh;
+    border-right: 1px solid #333;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, .3);
+}
+.adminmanage-in ul li a{
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    display: block;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: all 300ms ease;
+}
+.adminmanage-in ul li a:hover{
+    background: #333;
+    color: white;
+    transition: all 300ms ease;
+}
+.admin{
+    width: 100%;
+    overflow: hidden;
+}
+.admin-item{
+    width: 100%;
+    /* height: 40px; */
+    overflow: hidden;
+    text-align: center;
+    padding: 5px 40px;
+    border-bottom: 1px solid #333; 
+}
+.admin-bound{
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+}
+.admin-item button{
+    border: none;
+    width: 100px;
+    height: 25px;
+    margin: 2px;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid white;
+    transition: all 300ms ease;
+}
+.admin-item button:hover{
+    background: rgba(0, 0, 0, 0);
+    transition: all 300ms ease;
+}
+.left{
+    float: left;    
+}
+.right{
+    float: right;    
+}
+.nameadmin{
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.add-tour-form{
+    width: 100%;
+    height: 150px;
+    border-bottom: 3px solid black; 
+}
+.add-tour-form input{
+    float: left;
+    margin: 10px 16px;
+}
+.add-tour-form select{
+    float: left;
+    margin: 10px 16px;
+}
+.add-tour-form button{
+    float: left;
+    border: none;
+    width: 100px;
+    height: 43px;
+    margin: 2px;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid white;
+    transition: all 300ms ease;
+}
+.add-tour-form button:hover{
+    background: rgba(0, 0, 0, 0);
+    transition: all 300ms ease;
+}
+.tour-bound{
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+}
+.tour-item{
+    width: 100%;
+    /* height: 40px; */
+    overflow: hidden;
+    text-align: center;
+    padding: 5px 40px;
+    border-bottom: 1px solid #333; 
+}
+.tour-item button{
+    border: none;
+    width: 100px;
+    height: 25px;
+    margin: 2px;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid white;
+    transition: all 300ms ease;
+}
+.tour-item button:hover{
+    background: rgba(0, 0, 0, 0);
+    transition: all 300ms ease;
+}
+.tourtitle{
+    font-size: 19px;
+    font-weight: bold;
+    padding: 0 20px;
+}
+.tourdescription{
+    font-size: 19px;
+    padding: 0 20px;
+}
+.job-container{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.job-item{
+    overflow: hidden;
+}
+.job-item a{
+    text-decoration: none;
+    color: black;
+}
+.job-item button{
+    border: none;
+    width: 200px;
+    height: 25px;
+    margin: 2px;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid white;
+    transition: all 300ms ease;
+}
+.job-item button:hover{
+    background: rgba(0, 0, 0, 0);
+    transition: all 300ms ease;
+}
+.job{
+    padding: 7px 15px;
+    overflow: hidden;
+}

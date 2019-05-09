@@ -228,3 +228,7 @@ Body-NEWTOUR
 	font-size: 15px;
 	text-align: center
 }
+
+.tour-row li{
+	list-style-type: none;
+}
