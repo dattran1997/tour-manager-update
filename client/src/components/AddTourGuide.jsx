@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../css/addtourguild.css';
+import Slide from '../images/slide.jpg';
 
 export default class AddTourGuide extends Component {
     state={
@@ -92,28 +94,35 @@ export default class AddTourGuide extends Component {
   render() {
     return (
       <section className='add-tour-guide'>
-        {this.props.id}
-        {this.state.assignInfo.adminId == null ? (
-            this.state.adminList.map((admin) => 
-                <div className='admin-item' key={admin._id}>
-                    <h3>{admin.username}</h3>
-                    <button onClick={(e) => {this.addGuide(admin._id)}}>Add guide</button>
-                </div>
-            )
-        ) : (
-            this.state.adminList.map((admin) =>{
-                if(admin._id == this.state.assignInfo.adminId){
-                    return (
-                        <div className='admin-item' key={admin._id}>
-                            <h3>{admin.username}</h3>
-                            <button onClick={(e) => {this.deleteGuide()}}>Delete guide</button>
+      
+        <div class="background">
+            <img src={Slide} alt=""/>
+        </div>
+        <div className="add-admin-form">
+            {this.props.id}
+                {this.state.assignInfo.adminId == null ? (
+                    this.state.adminList.map((admin) => 
+                        <div className='addtour-item' key={admin._id}>
+                            <div class="addtour-username">{admin.username}</div>
+                            <button onClick={(e) => {this.addGuide(admin._id)}}>Add guide</button>
                         </div>
-                    );
-                }else{
-                    return null;
-                }
-            })
-        )}
+                    )
+                ) : (
+                    this.state.adminList.map((admin) =>{
+                        if(admin._id == this.state.assignInfo.adminId){
+                            return (
+                                <div className='addtour-item' key={admin._id}>
+                                    <div class="addtour-username">{admin.username}</div>
+                                    <button onClick={(e) => {this.deleteGuide()}} className="addtour-button">Delete guide</button>
+                                </div>
+                            );
+                        }else{
+                            return null;
+                        }
+                    })
+                )}
+        </div>
+        
       </section>
     )
   }

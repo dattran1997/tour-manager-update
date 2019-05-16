@@ -41,7 +41,7 @@
 .back {
     transform: translateZ(-60px);
 }
-.left {
+.leftbar {
     width: 60px;
     transform: rotateY(90deg);
     transform-origin: left;

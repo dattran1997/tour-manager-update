@@ -87,7 +87,12 @@ export default class MainPage extends Component {
                       </a>
                     </div>
                   </div>
-                  <img src={Pic1} />
+                  {tour.image == "abc" ? (
+                    <img src={Pic1} />
+                  ):(
+                    <img src={tour.image} />
+                  )}
+                  
                   <h3>{tour.title}</h3>
                   <ul className="rating">
                     <li className="rating-Item"><span className="fa fa-star gold"></span></li>

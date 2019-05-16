@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "base64-img": "^1.0.4",
     "react": "^16.8.6",
     "react-datepicker": "^2.3.0",
     "react-dom": "^16.8.6",

@@ -4,6 +4,7 @@ import '../css/AdminManager.css';
 import '../css/graph3d.css';
 import Slide from '../images/slide.jpg';
 
+
 export default class AdminManager extends Component {
   state = {
     adminInfo: {
@@ -17,7 +18,7 @@ export default class AdminManager extends Component {
       detail:'',
       price:'',
       duration:'',
-      image:'',
+      image:'abc',
       kind:'local',
     },
     customerGraph:{
@@ -185,7 +186,7 @@ export default class AdminManager extends Component {
       body:JSON.stringify(this.state.tourInfo)
     }).then((res)=> res.json());
     if(!result.success){
-      window.alert(result.message);
+      window.alert(JSON.stringify(result.message) );
     }else{
       this.getAllTour();
     }
@@ -235,6 +236,21 @@ export default class AdminManager extends Component {
     });
   }
 
+  tourImageInfoChange = (imageFiles) =>{
+    const files = imageFiles.image
+    const reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = (e) =>{
+      const image = e.target.result;
+      this.setState({
+        tourInfo:{
+          ...this.state.tourInfo,
+          image: image
+        }
+      });
+    }
+  }
+
   getAllJob = async () =>{
     const result = await fetch(`http://localhost:9999/api/job`,{
       method:'GET',
@@ -252,6 +268,7 @@ export default class AdminManager extends Component {
   addTourGuide = (jobId) =>{
     window.location.href = `/add-tour-guide/${jobId}`;
   }
+
 
   render() {
     return (
@@ -350,7 +367,7 @@ export default class AdminManager extends Component {
           <input placeholder='Detail' onChange={(e) => this.tourInfoChange({detail:e.target.value})} />
           <input placeholder='Price' onChange={(e) => this.tourInfoChange({price:e.target.value})} />
           <input placeholder='Duration by day' onChange={(e) => this.tourInfoChange({duration:e.target.value})} />
-          <input placeholder='Image' onChange={(e) => this.tourInfoChange({image:e.target.value})} />
+          <input placeholder='Image' type='file' multiple={false} onChange={(e) => this.tourImageInfoChange({image:e.target.files})} />
           <select onChange={(e) => this.tourInfoChange({kind:e.target.value})} value={this.state.tourInfo.kind}>
             <option value='local'>local</option>
             <option value='foreign'>foreign</option>
@@ -378,13 +395,13 @@ export default class AdminManager extends Component {
       <section className='job-container'>
         {this.state.jobList.map((job) =>
           <div className='job-item'>
-            <a href={'/job-detail/' + job._id}>
+            <a href={'/job-detail/' + job._id} class="left"> 
               <div class="job jname left">{job.customer.fullname}</div>
               <div class="job left">{job.customer.phone}</div>
               <div class="job left">{job.customer.identifyNumber}</div>
               <div class="job left">{job.tour.title}</div>
             </a>
-            <button onClick={() => {this.addTourGuide(job._id)}} >Add tour guide</button>
+            <button onClick={() => {this.addTourGuide(job._id)}}  class="right">Add tour guide</button>
           </div>
         )}
       </section>
@@ -468,7 +485,7 @@ export default class AdminManager extends Component {
                         <div className="bar3"></div>
                       )}
                   </div>
-                  <div class="side left"></div>
+                  <div class="side leftbar"></div>
               </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ const jobRoute = express.Router();
 
 jobRoute.get('/', async function(req,res){
     const allJob = await JobModel.find().populate('customer').populate('tour').populate('worker');
-    console.log(allJob);
+    // console.log(allJob);
     res.json({
         success: true,
         allJob: allJob,
@@ -38,7 +38,7 @@ jobRoute.get('/:jobId',async function(req,res){
 });
 
 jobRoute.post('/',async function(req,res){
-    console.log(req.body);
+    // console.log(req.body);
     const tourId = req.body.tourId;
     const customerInfo = req.body.touristInfo;
     const touristNumber = req.body.touristNumber;
@@ -71,7 +71,7 @@ jobRoute.post('/',async function(req,res){
 });
 
 jobRoute.post('/assignJob', async function(req,res){
-    console.log(req.body);
+    // console.log(req.body);
     const workerId = req.body.adminId;
     const jobId = req.body.jobId;
 
@@ -93,7 +93,7 @@ jobRoute.post('/checked/:jobId', async function(req,res){
     
     try{
         const job = await JobModel.findOneAndUpdate({_id: jobId},{$set:{checked: true}},{new: true, useFindAndModify: false});
-        console.log(job);
+        // console.log(job);
         res.json({
             success:true,
         });

@@ -6,7 +6,7 @@ const TourSchema = new mongoose.Schema({
     detail: {type:String, require:true},
     price: {type:Number, required:true},
     duration: {type:Number, required:true},
-    image: {type:String, required:true},
+    image: {type:String, default:'abc'},
     count: {type:Number, default:0},
     kind:{type:String, required:true},
 });

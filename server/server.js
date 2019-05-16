@@ -19,9 +19,13 @@ const tourServer = async function(){
             credentials: true,
         }))
         app.use(bodyParser.urlencoded({
+            limit : '50mb',
             extended: false
         }));
-        app.use(bodyParser.json());
+        app.use(bodyParser.json({
+            limit : '50mb', 
+            extended : false,
+        }));
         app.use(session({
             secret: 'keyboard cat',
             resave: false,

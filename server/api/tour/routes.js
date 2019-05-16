@@ -6,7 +6,7 @@ const tourRoute = express.Router();
 tourRoute.get('/',async function(req,res){
     try{
         const allTour = await TourModel.find();
-        console.log(allTour);
+        // console.log(allTour);
         res.json({
             success: true,
             allTour: allTour
@@ -37,9 +37,9 @@ tourRoute.get('/:id',async function(req,res){
 });
 
 tourRoute.post('/', async function(req,res){
-    console.log(req.body);
+    // console.log(req.body);
     const tour = req.body;
-
+    
     try{
         const newTour =  await TourModel.create(tour);
         res.json({
@@ -54,7 +54,6 @@ tourRoute.post('/', async function(req,res){
 });
 
 tourRoute.post('/edit/:id', async function(req,res){
-    console.log(req.body);
     console.log(req.params.id);
     const newData = req.body;
     const id = req.params.id;
