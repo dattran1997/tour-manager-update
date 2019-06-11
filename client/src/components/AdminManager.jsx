@@ -292,12 +292,6 @@ export default class AdminManager extends Component {
                     <li>
                       <a href='/admin-manager/tour'>tour manager</a>
                     </li>
-                    <li>
-                      <a href='/admin-manager/customer-graph'>customer graph</a>
-                    </li>
-                    <li>
-                      <a href='/admin-manager/tour-graph'>tour graph</a>
-                    </li>
                   </>
                 ) : (
                   <li>
@@ -394,12 +388,17 @@ export default class AdminManager extends Component {
     return(
       <section className='job-container'>
         {this.state.jobList.map((job) =>
-          <div className='job-item'>
+          <div className='job-item' key={job._id}>
             <a href={'/job-detail/' + job._id} class="left"> 
               <div class="job jname left">{job.customer.fullname}</div>
               <div class="job left">{job.customer.phone}</div>
               <div class="job left">{job.customer.identifyNumber}</div>
               <div class="job left">{job.tour.title}</div>
+              { job.worker == null ? (
+                <div className='job left'>Chưa có</div>
+              ):(
+                <div className='job left'>{job.worker.username}</div>
+              )}
             </a>
             <button onClick={() => {this.addTourGuide(job._id)}}  class="right">Add tour guide</button>
           </div>
@@ -511,7 +510,7 @@ export default class AdminManager extends Component {
         {this.state.jobList.map((job) =>{
           if(job.worker != null && job.worker._id == window.localStorage.userId){
             return(
-              <div className='work-item'>
+              <div className='work-item' key={job._id}>
                 <a href={'/work-detail/' + job._id}>
                   <h3>{job.customer.fullname}</h3>
                   <p>{job.customer.phone}</p>

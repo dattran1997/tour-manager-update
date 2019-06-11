@@ -11,7 +11,8 @@ const tourServer = async function(){
         const app = express();
 
         //connect to mongodb
-        await mongoose.connect('mongodb://localhost:27017/tour-manager');
+        // await mongoose.connect('mongodb://localhost:27017/tour-manager');
+        await mongoose.connect('mongodb+srv://admin:admin@area0-1ntpn.mongodb.net/tour-manager?retryWrites=true&w=majority');
 
         //user middleware + routers
         app.use(cors({
